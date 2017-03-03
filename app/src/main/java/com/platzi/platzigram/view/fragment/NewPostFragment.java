@@ -14,8 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.platzi.platzigram.R;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,6 +32,7 @@ public class NewPostFragment extends Fragment {
     ImageView ivPicture;
     Button btnTakePicture;
     static final int REQUETS_IMAGE_CAPTURE=1;
+    String mCurrentPhotoPath;
 
 
 
@@ -68,11 +71,16 @@ public class NewPostFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode==REQUETS_IMAGE_CAPTURE && resultCode== getActivity().RESULT_OK){
+        if (requestCode==REQUETS_IMAGE_CAPTURE && resultCode== getActivity().RESULT_OK) {
 
-            Bundle extras=data.getExtras();
+            Picasso.with(getActivity()).load(mCurrentPhotoPath).into(ivPicture);
+
+            addPictureToGallery();
+            Toast.makeText(getActivity(),mCurrentPhotoPath,Toast.LENGTH_LONG).show();
+
+            /*Bundle extras=data.getExtras();
             Bitmap imageBitmap=(Bitmap)extras.get("data") ;
-            ivPicture.setImageBitmap(imageBitmap);
+            ivPicture.setImageBitmap(imageBitmap);*/
 
         }
     }
@@ -127,8 +135,20 @@ public class NewPostFragment extends Fragment {
                 storageDir
 
         );
+        mCurrentPhotoPath="file:"+image.getAbsolutePath();
 
         return image;
+    }
+
+
+    private void addPictureToGallery(){
+        Intent mediScanIntent=new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+
+        File newfile=new File(mCurrentPhotoPath);
+
+        Uri contentUri=Uri.fromFile(newfile);
+        mediScanIntent.setData(contentUri);
+        getActivity().sendBroadcast(mediScanIntent);
     }
 
 

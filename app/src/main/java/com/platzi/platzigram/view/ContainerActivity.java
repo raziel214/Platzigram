@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.platzi.platzigram.R;
 import com.platzi.platzigram.view.fragment.HomeFragment;
 import com.platzi.platzigram.view.fragment.ProfileFragment;
@@ -26,6 +28,8 @@ public class ContainerActivity extends AppCompatActivity {
 
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottombar);
         bottomBar.setDefaultTab(R.id.home);
+        FacebookSdk.getApplicationContext();
+        AppEventsLogger.activateApp(getApplication());
 
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
