@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.storage.StorageReference;
+import com.platzi.platzigram.PlatzigramApplication;
 import com.platzi.platzigram.R;
 import com.squareup.picasso.Picasso;
 
@@ -32,7 +34,12 @@ public class NewPostFragment extends Fragment {
     ImageView ivPicture;
     Button btnTakePicture;
     static final int REQUETS_IMAGE_CAPTURE=1;
+    String mCurrentAbsolutePhotoPath;
     String mCurrentPhotoPath;
+    PlatzigramApplication app;
+    StorageReference storageReference;
+
+
 
 
 
@@ -61,6 +68,9 @@ public class NewPostFragment extends Fragment {
             }
         });
 
+        app =(PlatzigramApplication) getActivity().getApplicationContext();
+        storageReference= app.getStorageReference();
+
         return view;
 
 
@@ -77,6 +87,16 @@ public class NewPostFragment extends Fragment {
 
             addPictureToGallery();
             Toast.makeText(getActivity(),mCurrentPhotoPath,Toast.LENGTH_LONG).show();
+
+
+            public void uploadFile(){
+
+                File newFile=new File(mCurrentAbsolutePhotoPath);
+                Uri contentUri=Uri.fromFile(newFile);
+
+                //5:21;
+
+            }
 
             /*Bundle extras=data.getExtras();
             Bitmap imageBitmap=(Bitmap)extras.get("data") ;
@@ -136,6 +156,7 @@ public class NewPostFragment extends Fragment {
 
         );
         mCurrentPhotoPath="file:"+image.getAbsolutePath();
+        mCurrentAbsolutePhotoPath=image.getAbsolutePath();
 
         return image;
     }
