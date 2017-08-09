@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="simple-view-behavior-1.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/d1a0f88ae4063dceb6c18bc9f3a095d0179269b4/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/d1a0f88ae4063dceb6c18bc9f3a095d0179269b4/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/3a762693b1669261e16ccf444041910608289ca4/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/3a762693b1669261e16ccf444041910608289ca4/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
