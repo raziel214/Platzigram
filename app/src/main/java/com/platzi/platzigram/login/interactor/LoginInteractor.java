@@ -1,4 +1,4 @@
-package com.platzi.platzigram.Login.interactor;
+package com.platzi.platzigram.login.interactor;
 
 /**
  * Created by Raziel214 on 9/8/2017.
@@ -7,4 +7,5 @@ package com.platzi.platzigram.Login.interactor;
 public interface LoginInteractor {
 
     void singIn(String username,String Pasword);
+
 }

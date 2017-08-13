@@ -1,4 +1,4 @@
-package com.platzi.platzigram.Login.view;
+package com.platzi.platzigram.login.view;
 
 /**
  * Created by Raziel214 on 8/8/2017.
@@ -7,13 +7,13 @@ package com.platzi.platzigram.Login.view;
 public interface LoginView {
 
 
-    void anabledInputs();
+    void enabledInputs();
     void disabledInputs();
 
     void showProgressBar();
     void hideProgressBar();
 
-    void loginError();
+    void loginError(String error);
 
     void goCreateAccount();
     void goHome();

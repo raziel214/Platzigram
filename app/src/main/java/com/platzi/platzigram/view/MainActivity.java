@@ -22,7 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.platzi.platzigram.Login.view.LoginActivity;
+import com.platzi.platzigram.login.view.LoginActivity;
 import com.platzi.platzigram.R;
 
 public class MainActivity extends AppCompatActivity {

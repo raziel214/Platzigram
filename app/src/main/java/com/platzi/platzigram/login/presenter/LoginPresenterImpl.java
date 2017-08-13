@@ -1,8 +1,8 @@
-package com.platzi.platzigram.Login.presenter;
+package com.platzi.platzigram.login.presenter;
 
-import com.platzi.platzigram.Login.interactor.LoginInteractor;
-import com.platzi.platzigram.Login.interactor.LoginInteractorImpl;
-import com.platzi.platzigram.Login.view.LoginView;
+import com.platzi.platzigram.login.interactor.LoginInteractor;
+import com.platzi.platzigram.login.interactor.LoginInteractorImpl;
+import com.platzi.platzigram.login.view.LoginView;
 
 /**
  * Created by Raziel214 on 9/8/2017.
@@ -21,18 +21,27 @@ public class LoginPresenterImpl implements LoginPresenter {
     @Override
     public void signIn(String username, String pasword) {
 
+        loginView.enabledInputs();
+        loginView.showProgressBar();
         interactor.singIn(username,pasword);
+
+
 
 
     }
 
     @Override
     public void loginSucces() {
-
+        loginView.goHome();
+        loginView.hideProgressBar();
     }
 
     @Override
-    public void loginError() {
+    public void loginError(String error) {
+
+        loginView.enabledInputs();
+        loginView.hideProgressBar();
+        loginView.loginError(error);
 
     }
 }

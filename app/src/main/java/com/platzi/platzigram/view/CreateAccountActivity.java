@@ -15,7 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.platzi.platzigram.Login.view.LoginActivity;
+import com.platzi.platzigram.login.view.LoginActivity;
 import com.platzi.platzigram.R;
 
 public class CreateAccountActivity extends AppCompatActivity {

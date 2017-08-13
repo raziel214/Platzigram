@@ -89,14 +89,14 @@ public class NewPostFragment extends Fragment {
             Toast.makeText(getActivity(),mCurrentPhotoPath,Toast.LENGTH_LONG).show();
 
 
-            public void uploadFile(){
+           /* public void uploadFile(){
 
                 File newFile=new File(mCurrentAbsolutePhotoPath);
                 Uri contentUri=Uri.fromFile(newFile);
 
                 //5:21;
 
-            }
+            }*/
 
             /*Bundle extras=data.getExtras();
             Bitmap imageBitmap=(Bitmap)extras.get("data") ;

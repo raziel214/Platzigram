@@ -20,4 +20,7 @@
     <string name="facebook_app_id">1569280529749589</string>
     <string name="text_button_loginemail">Login Email</string>
     <string name="fb_login_protocol_scheme">fbAPP_ID</string>
+    <string name="login_error">Something happend:</string>
+    <string name="hint_title">Titulo</string>
+    <string name="hint_description">Descripcion</string>
 </resources>

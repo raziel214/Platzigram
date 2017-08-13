@@ -1,4 +1,4 @@
-package com.platzi.platzigram.Login.presenter;
+package com.platzi.platzigram.login.presenter;
 
 /**
  * Created by Raziel214 on 9/8/2017.
@@ -10,5 +10,5 @@ public interface LoginPresenter {
 
     void loginSucces();
 
-    void loginError();
+    void loginError(String error);
 }
