@@ -47,7 +47,7 @@
         </activity>
         <activity android:name=".login.view.LoginActivity"></activity>
         <activity
-            android:name=".view.CreateAccountActivity"
+            android:name=".login.view.CreateAccountActivity"
             android:parentActivityName=".login.view.LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

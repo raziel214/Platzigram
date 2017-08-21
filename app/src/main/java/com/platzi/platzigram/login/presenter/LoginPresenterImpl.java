@@ -1,5 +1,8 @@
 package com.platzi.platzigram.login.presenter;
 
+import android.app.Activity;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.platzi.platzigram.login.interactor.LoginInteractor;
 import com.platzi.platzigram.login.interactor.LoginInteractorImpl;
 import com.platzi.platzigram.login.view.LoginView;
@@ -13,17 +16,18 @@ public class LoginPresenterImpl implements LoginPresenter {
     private LoginView loginView;
     private LoginInteractor interactor;
 
+
     public LoginPresenterImpl(LoginView loginView) {
         this.loginView = loginView;
         interactor=new LoginInteractorImpl(this);
     }
 
     @Override
-    public void signIn(String username, String pasword) {
+    public void signIn(String username, String pasword, Activity activity,FirebaseAuth firebaseAuth) {
 
         loginView.enabledInputs();
         loginView.showProgressBar();
-        interactor.singIn(username,pasword);
+        interactor.singIn(username,pasword, activity,firebaseAuth);
 
 
 

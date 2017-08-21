@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         btnLoginEmail = (Button) findViewById(R.id.btnLoginEmail);
         btnLoginFb =(LoginButton) findViewById(R.id.btnloginfb);
 
-        mAuth= FirebaseAuth.getInstance();
+      /*  mAuth= FirebaseAuth.getInstance();*/
 
         btnLoginEmail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        mAuthListener= new FirebaseAuth.AuthStateListener() {
+       /* mAuthListener= new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-
+*/
 
 
 
